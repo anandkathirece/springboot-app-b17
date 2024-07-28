@@ -2,11 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('git pull') {
             steps {
-                echo 'Hello World'
+                git branch: 'main', url: 'https://github.com/anandkathirece/springboot-app-b17.git'
+            }
+        }
+        stage('package') {
+            steps {
+               sh 'mvn clean package'
             }
         }
     }
 }
-
