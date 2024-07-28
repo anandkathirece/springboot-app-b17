@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'javalabel' }
 
     stages {
         stage('git pull') {
